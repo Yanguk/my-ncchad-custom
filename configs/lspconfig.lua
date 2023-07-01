@@ -4,7 +4,7 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require "lspconfig"
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "html", "cssls", "tsserver", "clangd", "rust_analyzer", "eslint" }
+local servers = { "html", "cssls", "clangd" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -13,7 +13,10 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-lspconfig.tsserver.setup {
+local util = require "custom.configs.util"
+
+lspconfig["tsserver"].setup {
+  capabilities = capabilities,
   init_options = {
     hostInfo = "neovim",
     preferences = {
@@ -22,21 +25,7 @@ lspconfig.tsserver.setup {
   },
 }
 
-local eslint_settings = {}
-
-local function has_yarn_folder()
-  local yarn_path = vim.fn.getcwd() .. "/.yarn"
-  return vim.fn.isdirectory(yarn_path) == 1
-end
-
-if has_yarn_folder() then
-  eslint_settings = {
-    nodePath = vim.fn.getcwd() .. "/.yarn/sdks",
-    packageManager = "yarn",
-  }
-end
-
-lspconfig.eslint.setup {
+lspconfig["eslint"].setup {
   capabilities = capabilities,
   on_attach = function(client, bufnr)
     vim.api.nvim_create_autocmd("BufWritePre", {
@@ -44,5 +33,16 @@ lspconfig.eslint.setup {
       command = "EslintFixAll",
     })
   end,
-  settings = eslint_settings,
+  settings = util.eslint_settings,
+}
+
+lspconfig["rust_analyzer"].setup {
+  capabilities = capabilities,
+  settings = {
+    ["rust-analyzer"] = {
+      checkOnSave = {
+        command = "clippy",
+      },
+    },
+  },
 }

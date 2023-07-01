@@ -13,3 +13,7 @@ vim.api.nvim_create_autocmd({ "BufAdd", "BufEnter", "tabnew" }, {
     end, vim.t.bufs)
   end,
 })
+
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldenable = false

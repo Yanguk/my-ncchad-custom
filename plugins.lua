@@ -1,4 +1,4 @@
-local overrides = require("custom.configs.overrides")
+local overrides = require "custom.configs.overrides"
 
 ---@type NvPluginSpec[]
 local plugins = {
@@ -23,21 +23,10 @@ local plugins = {
     end, -- Override to setup mason-lspconfig
   },
 
-  {
-    "hrsh7th/nvim-cmp",
-    keys ={":", "/", "?"},
-    dependencies = {
-      "hrsh7th/cmp-cmdline"
-    },
-    config = function()
-      require "custom.configs.cmp"
-    end
-  },
-
   -- override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = overrides.mason
+    opts = overrides.mason,
   },
 
   {
@@ -48,11 +37,6 @@ local plugins = {
   {
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,
-  },
-
-  {
-    "NvChad/nvterm",
-    opts = overrides.nvterm,
   },
 
   -- Install a plugin
@@ -77,6 +61,28 @@ local plugins = {
   --   "mg979/vim-visual-multi",
   --   lazy = false,
   -- }
+
+  -- custom
+  {
+    "NvChad/nvterm",
+    opts = overrides.nvterm,
+  },
+
+  {
+    "hrsh7th/nvim-cmp",
+    keys = { ":", "/", "?" },
+    dependencies = {
+      "hrsh7th/cmp-cmdline",
+    },
+    config = function()
+      require "custom.configs.cmp"
+    end,
+  },
+
+  {
+    "Pocco81/TrueZen.nvim",
+    cmd = { "TZAtaraxis", "TZMinimalist" },
+  },
 }
 
 return plugins

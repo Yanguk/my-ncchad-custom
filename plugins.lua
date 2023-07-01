@@ -83,6 +83,13 @@ local plugins = {
     "Pocco81/TrueZen.nvim",
     cmd = { "TZAtaraxis", "TZMinimalist" },
   },
+
+  {
+    "nvim-pack/nvim-spectre",
+    config = function()
+      require("spectre").setup()
+    end,
+  },
 }
 
 return plugins

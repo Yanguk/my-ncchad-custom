@@ -9,4 +9,10 @@ M.general = {
 
 -- more keybinds!
 
+M.buffer = {
+  n = {
+    ["<leader>tx"] = { "<cmd>:lua require('nvchad_ui.tabufline').closeAllBufs() <CR>", "Close All Bufs" },
+  },
+}
+
 return M

@@ -79,6 +79,17 @@ local plugins = {
       require("spectre").setup()
     end,
   },
+
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      "hrsh7th/cmp-cmdline",
+    },
+    config = function(_, opts)
+      require "custom.configs.cmp"
+      require("cmp").setup(opts)
+    end,
+  },
 }
 
 return plugins

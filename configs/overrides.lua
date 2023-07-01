@@ -42,15 +42,26 @@ M.mason = {
 
 -- git support in nvimtree
 M.nvimtree = {
-  git = {
-    enable = true,
-  },
+  git = { enable = true },
 
   renderer = {
     highlight_git = true,
     icons = {
       show = {
         git = true,
+      },
+    },
+  },
+}
+
+M.nvterm = {
+  terminals = {
+    type_opts = {
+      float = {
+        row = 0.02,
+        col = 0.048,
+        width = 0.905,
+        height = 0.9,
       },
     },
   },

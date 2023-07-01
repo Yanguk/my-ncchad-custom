@@ -23,6 +23,17 @@ local plugins = {
     end, -- Override to setup mason-lspconfig
   },
 
+  {
+    "hrsh7th/nvim-cmp",
+    keys ={":", "/", "?"},
+    dependencies = {
+      "hrsh7th/cmp-cmdline"
+    },
+    config = function()
+      require "custom.configs.cmp"
+    end
+  },
+
   -- override plugin configs
   {
     "williamboman/mason.nvim",
@@ -37,6 +48,11 @@ local plugins = {
   {
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,
+  },
+
+  {
+    "NvChad/nvterm",
+    opts = overrides.nvterm,
   },
 
   -- Install a plugin

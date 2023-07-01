@@ -69,17 +69,6 @@ local plugins = {
   },
 
   {
-    "hrsh7th/nvim-cmp",
-    keys = { ":", "/", "?" },
-    dependencies = {
-      "hrsh7th/cmp-cmdline",
-    },
-    config = function()
-      require "custom.configs.cmp"
-    end,
-  },
-
-  {
     "Pocco81/TrueZen.nvim",
     cmd = { "TZAtaraxis", "TZMinimalist" },
   },

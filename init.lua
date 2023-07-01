@@ -6,6 +6,7 @@
 --   command = "tabdo wincmd =",
 -- })
 
+-- buffer
 vim.api.nvim_create_autocmd({ "BufAdd", "BufEnter", "tabnew" }, {
   callback = function()
     vim.t.bufs = vim.tbl_filter(function(bufnr)
@@ -14,6 +15,7 @@ vim.api.nvim_create_autocmd({ "BufAdd", "BufEnter", "tabnew" }, {
   end,
 })
 
+-- fold
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldenable = false

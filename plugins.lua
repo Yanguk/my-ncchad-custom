@@ -63,21 +63,11 @@ local plugins = {
   -- }
 
   -- custom
+
+  -- override
   {
     "NvChad/nvterm",
     opts = overrides.nvterm,
-  },
-
-  {
-    "Pocco81/TrueZen.nvim",
-    cmd = { "TZAtaraxis", "TZMinimalist" },
-  },
-
-  {
-    "nvim-pack/nvim-spectre",
-    config = function()
-      require("spectre").setup()
-    end,
   },
 
   {
@@ -88,6 +78,19 @@ local plugins = {
     config = function(_, opts)
       require "custom.configs.cmp"
       require("cmp").setup(opts)
+    end,
+  },
+
+  -- new
+  {
+    "Pocco81/TrueZen.nvim",
+    cmd = { "TZAtaraxis", "TZMinimalist" },
+  },
+
+  {
+    "nvim-pack/nvim-spectre",
+    config = function()
+      require("spectre").setup()
     end,
   },
 }

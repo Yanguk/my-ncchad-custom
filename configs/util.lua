@@ -18,7 +18,7 @@ end
 
 M.eslint_settings = get_eslint_settings()
 
-M.toggle_white_space = (function()
+M.toggle_trailing_space = (function()
   local isHighlightEnabled = false
 
   function toggle()

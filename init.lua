@@ -22,7 +22,7 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldenable = false
 
 -- show trailing whitespaces
-util.toggle_white_space()
+util.toggle_trailing_space()
 
 vim.o.termguicolors = true
 vim.opt.expandtab = false

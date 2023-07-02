@@ -12,7 +12,7 @@ M.general = {
 
 M.buffer = {
   n = {
-    ["<leader>tx"] = { "<cmd>:lua require('nvchad_ui.tabufline').closeAllBufs() <CR>", "Close All Bufs" },
+    ["<leader>tx"] = { "<cmd>:lua require('nvchad_ui.tabufline').closeAllBufs() <CR>", "Close all bufs" },
   },
 }
 
@@ -36,16 +36,16 @@ M.spectre = {
   },
 }
 
-M.mdpreview = {
+M.markdown_preview = {
   n = {
-    ["<leader>mp"] = { "<cmd> MarkdownPreview<CR>", "Open Preview" },
-    ["<leader>mc"] = { "<cmd> MarkdownPreviewStop<CR>", "Close Preview" },
+    ["<leader>mp"] = { "<cmd> MarkdownPreview<CR>", "Open preview" },
+    ["<leader>mc"] = { "<cmd> MarkdownPreviewStop<CR>", "Close preview" },
   },
 }
 
-M.white_space = {
+M.trailing_space = {
   n = {
-    ["<leader>ts"] = { util.toggle_white_space, "Toggle white space" },
+    ["<leader>ts"] = { util.toggle_trailing_space, "Toggle trailing space" },
   },
 }
 

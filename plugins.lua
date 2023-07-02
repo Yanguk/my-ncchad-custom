@@ -125,7 +125,15 @@ local plugins = {
     config = function()
       require("nvim-ts-autotag").setup()
     end,
-    event = "VeryLazy"
+    event = "VeryLazy",
+  },
+
+  {
+    "sindrets/diffview.nvim",
+    config = function()
+      require("diffview").setup()
+    end,
+    event = "VeryLazy",
   },
 }
 

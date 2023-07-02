@@ -1,5 +1,6 @@
-local autocmd = vim.api.nvim_create_autocmd
+local util = require "custom.configs.util"
 
+local autocmd = vim.api.nvim_create_autocmd
 -- Auto resize panes when resizing nvim window
 autocmd("VimResized", {
   pattern = "*",
@@ -21,8 +22,7 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldenable = false
 
 -- show trailing whitespaces
-vim.cmd('highlight ExtraWhitespace ctermbg=red guibg=red')
-vim.cmd('match ExtraWhitespace /\\s\\+$/')
+util.toggle_white_space()
 
 vim.o.termguicolors = true
 vim.opt.expandtab = false

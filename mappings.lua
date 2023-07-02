@@ -1,3 +1,4 @@
+local util = require "custom.configs.util"
 ---@type MappingsTable
 local M = {}
 
@@ -39,6 +40,12 @@ M.mdpreview = {
   n = {
     ["<leader>mp"] = { "<cmd> MarkdownPreview<CR>", "Open Preview" },
     ["<leader>mc"] = { "<cmd> MarkdownPreviewStop<CR>", "Close Preview" },
+  },
+}
+
+M.white_space = {
+  n = {
+    ["<leader>ts"] = { util.toggle_white_space, "Toggle white space" },
   },
 }
 

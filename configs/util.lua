@@ -18,4 +18,22 @@ end
 
 M.eslint_settings = get_eslint_settings()
 
+M.toggle_white_space = (function()
+  local isHighlightEnabled = false
+
+  function toggle()
+    if isHighlightEnabled then
+      vim.cmd "highlight clear ExtraWhitespace"
+      vim.cmd "match none"
+    else
+      vim.cmd "highlight ExtraWhitespace ctermbg=red guibg=red"
+      vim.cmd "match ExtraWhitespace /\\s\\+$/"
+    end
+
+    isHighlightEnabled = not isHighlightEnabled
+  end
+
+	return toggle
+end)()
+
 return M

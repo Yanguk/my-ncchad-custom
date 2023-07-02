@@ -118,6 +118,15 @@ local plugins = {
       vim.g.mkdp_theme = "dark"
     end,
   },
+
+  {
+    "windwp/nvim-ts-autotag",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
+    event = "VeryLazy"
+  },
 }
 
 return plugins

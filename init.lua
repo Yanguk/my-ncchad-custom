@@ -23,3 +23,7 @@ vim.opt.foldenable = false
 -- show trailing whitespaces
 vim.cmd('highlight ExtraWhitespace ctermbg=red guibg=red')
 vim.cmd('match ExtraWhitespace /\\s\\+$/')
+
+vim.o.termguicolors = true
+vim.opt.expandtab = false
+vim.opt.smarttab = true

@@ -21,7 +21,7 @@ M.spectre = {
       '<cmd>lua require("spectre").open()<CR>',
       "Open Spectre",
     },
-   ["<leader>sw"] = {
+    ["<leader>sw"] = {
       '<cmd>lua require("spectre").open_visual({select_word=true})<CR>',
       "Search current word",
     },
@@ -31,9 +31,14 @@ M.spectre = {
     },
   },
   v = {
-    ["<leader>sw"] = { '<esc><cmd>lua require("spectre").open_visual()<CR>',
-      "Search current word",
-    }
+    ["<leader>sw"] = { '<esc><cmd>lua require("spectre").open_visual()<CR>', "Search current word" },
+  },
+}
+
+M.mdpreview = {
+  n = {
+    ["<leader>mp"] = { "<cmd> MarkdownPreview<CR>", "Open Preview" },
+    ["<leader>mc"] = { "<cmd> MarkdownPreviewStop<CR>", "Close Preview" },
   },
 }
 

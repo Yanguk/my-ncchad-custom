@@ -16,6 +16,7 @@ end
 local util = require "custom.configs.util"
 
 lspconfig["tsserver"].setup {
+  on_attach = on_attach,
   capabilities = capabilities,
   init_options = {
     hostInfo = "neovim",
@@ -28,6 +29,8 @@ lspconfig["tsserver"].setup {
 lspconfig["eslint"].setup {
   capabilities = capabilities,
   on_attach = function(client, bufnr)
+    on_attach(client, bufnr)
+
     vim.api.nvim_create_autocmd("BufWritePre", {
       buffer = bufnr,
       command = "EslintFixAll",
@@ -37,6 +40,7 @@ lspconfig["eslint"].setup {
 }
 
 lspconfig["rust_analyzer"].setup {
+  on_attach = on_attach,
   capabilities = capabilities,
   settings = {
     ["rust-analyzer"] = {

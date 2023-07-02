@@ -82,6 +82,11 @@ local plugins = {
     end,
   },
 
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = overrides.telescope,
+  },
+
   -- new
   {
     "Pocco81/TrueZen.nvim",
@@ -92,6 +97,13 @@ local plugins = {
     "nvim-pack/nvim-spectre",
     config = function()
       require("spectre").setup()
+    end,
+  },
+
+  {
+    "simrat39/rust-tools.nvim",
+    config = function()
+      require "custom.configs.rust-tools"
     end,
   },
 }

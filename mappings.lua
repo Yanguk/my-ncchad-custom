@@ -15,7 +15,6 @@ M.buffer = {
     ["<leader>tx"] = {
       "<cmd>:lua require('nvchad_ui.tabufline').closeAllBufs() <CR>",
       "Close all bufs",
-      { nowait = true },
     },
   },
 }
@@ -25,51 +24,73 @@ M.spectre = {
     ["<leader>S"] = {
       '<cmd>lua require("spectre").open()<CR>',
       "Open Spectre",
-      { nowait = true },
     },
     ["<leader>sw"] = {
       '<cmd>lua require("spectre").open_visual({select_word=true})<CR>',
       "Search current word",
-      { nowait = true },
     },
     ["<leader>sp"] = {
       '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>',
       "Search on current file",
-      { nowait = true },
     },
   },
   v = {
     ["<leader>sw"] = {
       '<esc><cmd>lua require("spectre").open_visual()<CR>',
       "Search current word",
-      { nowait = true },
     },
   },
 }
 
 M.markdown_preview = {
   n = {
-    ["<leader>mp"] = { "<cmd> MarkdownPreview<CR>", "Open preview", { nowait = true } },
-    ["<leader>mc"] = { "<cmd> MarkdownPreviewStop<CR>", "Close preview", { nowait = true } },
+    ["<leader>mp"] = { "<cmd> MarkdownPreview<CR>", "Open preview",  },
+    ["<leader>mc"] = { "<cmd> MarkdownPreviewStop<CR>", "Close preview",  },
   },
 }
 
 M.trailing_space = {
   n = {
-    ["<leader>ts"] = { util.toggle_trailing_space, "Toggle trailing space", { nowait = true } },
+    ["<leader>ts"] = { util.toggle_trailing_space, "Toggle trailing space",  },
   },
 }
 
 M.diff_view = {
   n = {
-    ["<leader>dv"] = { ":DiffviewFileHistory %<CR>", "Diffview file %", { nowait = true } },
-    ["<leader>dc"] = { ":DiffviewClose<CR>", "Diffview close", { nowait = true } },
+    ["<leader>dv"] = { ":DiffviewFileHistory %<CR>", "Diffview file %",  },
+    ["<leader>dc"] = { ":DiffviewClose<CR>", "Diffview close",  },
   },
 }
 
 M.icon_picker = {
   n = {
-    ["<leader>ip"] = { "<cmd>IconPickerNormal<CR>", "Open icon picker", { nowait = true } },
+    ["<leader>ip"] = { "<cmd>IconPickerNormal<CR>", "Open icon picker",  },
+  },
+}
+
+M.true_zen = {
+  n = {
+    ["<leader>zn"] = { ":TZNarrow<CR>", "TZNarrow",  },
+    ["<leader>zf"] = { ":TZFocus<CR>", "TZFocuse",  },
+    ["<leader>zm"] = { ":TZMinimalist<CR>", "TZMinimallist",  },
+    ["<leader>za"] = { ":TZAtaraxis<CR>", "TZAtaraxis",  },
+  },
+  v = {
+    ["<leader>zn"] = { ":'<,'>TZNarrow<CR>", "TZNarrow",  },
+  },
+}
+
+M.yanky = {
+  n = {
+    ["<leader>yh"] = { ":Telescope yank_history<CR>", "Yank history",  },
+    ["<C-n>"] = { "<Plug>(YankyCycleForward)", "Yanky cycle foward", { noremap = true } },
+    ["<C-p>"] = { "<Plug>(YankyCycleForward)", "Yanky cycle back", { noremap = true } },
+  },
+}
+
+M.nvimtree = {
+  n = {
+    ["<leader>n"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree", { noremap = true } },
   },
 }
 

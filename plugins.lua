@@ -102,7 +102,7 @@ local plugins = {
   -- new
   {
     "Pocco81/TrueZen.nvim",
-    cmd = { "TZAtaraxis", "TZMinimalist" },
+    cmd = { "TZNarrow", "TZFocus", "TZMinimalist", "TZAtaraxis" },
   },
 
   {
@@ -150,15 +150,24 @@ local plugins = {
 
   {
     "ziontee113/icon-picker.nvim",
-		cmd = { "IconPickerNormal" },
-		dependencies = {
-			"stevearc/dressing.nvim",
-		},
+    cmd = { "IconPickerNormal" },
+    dependencies = {
+      "stevearc/dressing.nvim",
+    },
     config = function()
       require("icon-picker").setup {
         disable_legacy_commands = true,
       }
     end,
+  },
+
+  {
+    "gbprod/yanky.nvim",
+    config = function(_, opts)
+      require "custom.configs.yanky"
+      require("telescope").load_extension "yank_history"
+    end,
+    lazy = false,
   },
 }
 

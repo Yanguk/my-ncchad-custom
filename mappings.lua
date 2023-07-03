@@ -80,18 +80,4 @@ M.true_zen = {
   },
 }
 
-M.yanky = {
-  n = {
-    ["<leader>yh"] = { ":Telescope yank_history<CR>", "Yank history",  },
-    ["<C-n>"] = { "<Plug>(YankyCycleForward)", "Yanky cycle foward", { noremap = true } },
-    ["<C-p>"] = { "<Plug>(YankyCycleForward)", "Yanky cycle back", { noremap = true } },
-  },
-}
-
-M.nvimtree = {
-  n = {
-    ["<leader>n"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree", { noremap = true } },
-  },
-}
-
 return M

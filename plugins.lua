@@ -160,15 +160,6 @@ local plugins = {
       }
     end,
   },
-
-  {
-    "gbprod/yanky.nvim",
-    config = function(_, opts)
-      require "custom.configs.yanky"
-      require("telescope").load_extension "yank_history"
-    end,
-    lazy = false,
-  },
 }
 
 return plugins

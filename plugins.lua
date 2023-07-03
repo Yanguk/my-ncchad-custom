@@ -31,6 +31,9 @@ local plugins = {
 
   {
     "nvim-treesitter/nvim-treesitter",
+    dependencies = {
+      "JoosepAlviste/nvim-ts-context-commentstring",
+    },
     opts = overrides.treesitter,
   },
 
@@ -87,6 +90,15 @@ local plugins = {
     opts = overrides.telescope,
   },
 
+  {
+    "numToStr/Comment.nvim",
+    config = function(_, opts)
+      require("Comment").setup(vim.tbl_deep_extend("force", opts, {
+        pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+      }))
+    end,
+  },
+
   -- new
   {
     "Pocco81/TrueZen.nvim",
@@ -134,6 +146,19 @@ local plugins = {
       require("diffview").setup()
     end,
     event = "VeryLazy",
+  },
+
+  {
+    "ziontee113/icon-picker.nvim",
+		cmd = { "IconPickerNormal" },
+		dependencies = {
+			"stevearc/dressing.nvim",
+		},
+    config = function()
+      require("icon-picker").setup {
+        disable_legacy_commands = true,
+      }
+    end,
   },
 }
 

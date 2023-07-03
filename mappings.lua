@@ -67,4 +67,10 @@ M.diff_view = {
   },
 }
 
+M.icon_picker = {
+  n = {
+    ["<leader>ip"] = { "<cmd>IconPickerNormal<CR>", "Open icon picker", { nowait = true } },
+  },
+}
+
 return M

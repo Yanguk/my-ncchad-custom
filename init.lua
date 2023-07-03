@@ -27,3 +27,4 @@ vim.opt.foldenable = false
 vim.o.termguicolors = true
 vim.opt.expandtab = false
 vim.opt.smarttab = true
+vim.opt.wrap = false

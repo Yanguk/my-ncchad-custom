@@ -80,4 +80,10 @@ M.true_zen = {
   },
 }
 
+M.gitsigns = {
+	n = {
+		["<leader>gl"] = { ":Gitsigns toggle_current_line_blame<CR>", "Toggle line blame" }
+	}
+}
+
 return M

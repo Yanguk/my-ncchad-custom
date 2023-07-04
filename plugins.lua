@@ -152,7 +152,10 @@ local plugins = {
     "ziontee113/icon-picker.nvim",
     cmd = { "IconPickerNormal" },
     dependencies = {
-      "stevearc/dressing.nvim",
+      {
+        "stevearc/dressing.nvim",
+        lazy = false,
+      },
     },
     config = function()
       require("icon-picker").setup {

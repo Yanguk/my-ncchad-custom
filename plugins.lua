@@ -170,6 +170,7 @@ local plugins = {
 
   {
     "antosha417/nvim-lsp-file-operations",
+    event = "InsertEnter",
     dependencies = {
       { "nvim-lua/plenary.nvim" },
       { "nvim-tree/nvim-tree.lua" },
@@ -177,7 +178,6 @@ local plugins = {
     config = function()
       require("lsp-file-operations").setup()
     end,
-		event = 'VeryLazy',
   },
 }
 

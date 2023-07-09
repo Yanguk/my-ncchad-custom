@@ -75,7 +75,7 @@ local plugins = {
 
   {
     "hrsh7th/nvim-cmp",
-    lazy = false,
+    event = "VeryLazy",
     dependencies = {
       "hrsh7th/cmp-cmdline",
     },
@@ -107,6 +107,7 @@ local plugins = {
 
   {
     "nvim-pack/nvim-spectre",
+		cmd = { "Spectre" },
     config = function()
       require("spectre").setup()
     end,
@@ -114,6 +115,8 @@ local plugins = {
 
   {
     "simrat39/rust-tools.nvim",
+		event = "BufRead",
+		ft = { "rust" },
     config = function()
       require "custom.configs.rust-tools"
     end,
@@ -121,8 +124,8 @@ local plugins = {
 
   {
     "iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreview", "MarkdownPreviewStop" },
-    lazy = false,
+    event = "BufRead",
+    ft = { "markdown" },
     build = function()
       vim.fn["mkdp#util#install"]()
     end,
@@ -133,19 +136,20 @@ local plugins = {
 
   {
     "windwp/nvim-ts-autotag",
+    event = "InsertEnter",
+    ft = { "typescriptreact", "javascriptreact" },
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     config = function()
       require("nvim-ts-autotag").setup()
     end,
-    event = "VeryLazy",
   },
 
   {
     "sindrets/diffview.nvim",
+		cmd = { "DiffviewFileHistory", "DiffviewOpen" },
     config = function()
       require("diffview").setup()
     end,
-    event = "VeryLazy",
   },
 
   {
@@ -154,7 +158,7 @@ local plugins = {
     dependencies = {
       {
         "stevearc/dressing.nvim",
-        lazy = false,
+        event = "VeryLazy",
       },
     },
     config = function()
@@ -162,6 +166,18 @@ local plugins = {
         disable_legacy_commands = true,
       }
     end,
+  },
+
+  {
+    "antosha417/nvim-lsp-file-operations",
+    dependencies = {
+      { "nvim-lua/plenary.nvim" },
+      { "nvim-tree/nvim-tree.lua" },
+    },
+    config = function()
+      require("lsp-file-operations").setup()
+    end,
+		event = 'VeryLazy',
   },
 }
 

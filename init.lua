@@ -16,6 +16,14 @@
 --   end,
 -- })
 
+-- goToTab
+for i = 1, 9, 1 do
+  print("hii" .. i)
+  vim.keymap.set("n", string.format("<A-%s>", i), function()
+    vim.api.nvim_set_current_buf(vim.t.bufs[i])
+  end)
+end
+
 -- fold
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
@@ -26,5 +34,4 @@ vim.opt.foldenable = false
 
 vim.o.termguicolors = true
 vim.opt.expandtab = false
-vim.opt.smarttab = true
 vim.opt.wrap = false

@@ -86,4 +86,10 @@ M.gitsigns = {
 	}
 }
 
+M.nvimtree = {
+	n = {
+		["<leader>fr"] = { ":NvimTreeRefresh <CR>", "Refresh nvimtree" }
+	}
+}
+
 return M

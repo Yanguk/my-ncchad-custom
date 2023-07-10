@@ -75,7 +75,6 @@ local plugins = {
 
   {
     "hrsh7th/nvim-cmp",
-    event = "VeryLazy",
     dependencies = {
       "hrsh7th/cmp-cmdline",
     },
@@ -107,7 +106,7 @@ local plugins = {
 
   {
     "nvim-pack/nvim-spectre",
-		cmd = { "Spectre" },
+    cmd = { "Spectre" },
     config = function()
       require("spectre").setup()
     end,
@@ -115,8 +114,8 @@ local plugins = {
 
   {
     "simrat39/rust-tools.nvim",
-		event = "BufRead",
-		ft = { "rust" },
+    event = "BufRead",
+    ft = { "rust" },
     config = function()
       require "custom.configs.rust-tools"
     end,
@@ -146,7 +145,7 @@ local plugins = {
 
   {
     "sindrets/diffview.nvim",
-		cmd = { "DiffviewFileHistory", "DiffviewOpen" },
+    cmd = { "DiffviewFileHistory", "DiffviewOpen" },
     config = function()
       require("diffview").setup()
     end,

@@ -75,6 +75,7 @@ local plugins = {
 
   {
     "hrsh7th/nvim-cmp",
+    event = { "CmdlineEnter", "InsertEnter" },
     dependencies = {
       "hrsh7th/cmp-cmdline",
     },

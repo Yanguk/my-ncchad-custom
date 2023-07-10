@@ -1,5 +1,6 @@
 -- local util = require "custom.configs.util"
 
+local autocmd = vim.api.nvim_create_autocmd
 -- local autocmd = vim.api.nvim_create_autocmd
 -- Auto resize panes when resizing nvim window
 -- autocmd("VimResized", {
@@ -23,6 +24,13 @@ for i = 1, 9, 1 do
   end)
 end
 
+autocmd("FileType", {
+  pattern = { "typescriptreact", "typescript" },
+  callback = function()
+    vim.opt.expandtab = false
+  end,
+})
+
 -- fold
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
@@ -32,5 +40,4 @@ vim.opt.foldenable = false
 -- util.toggle_trailing_space()
 
 vim.o.termguicolors = true
-vim.opt.expandtab = false
 vim.opt.wrap = false

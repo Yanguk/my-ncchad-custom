@@ -185,6 +185,13 @@ local plugins = {
       require("lsp-file-operations").setup()
     end,
   },
+
+  {
+    "rest-nvim/rest.nvim",
+    event = "BufRead",
+    ft = { "http" },
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
 }
 
 return plugins

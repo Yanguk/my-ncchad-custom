@@ -44,52 +44,60 @@ M.spectre = {
 
 M.markdown_preview = {
   n = {
-    ["<leader>mp"] = { "<cmd> MarkdownPreview<CR>", "Open preview",  },
-    ["<leader>mc"] = { "<cmd> MarkdownPreviewStop<CR>", "Close preview",  },
+    ["<leader>mp"] = { "<cmd> MarkdownPreview<CR>", "Open preview" },
+    ["<leader>mc"] = { "<cmd> MarkdownPreviewStop<CR>", "Close preview" },
   },
 }
 
 M.trailing_space = {
   n = {
-    ["<leader>ts"] = { util.toggle_trailing_space, "Toggle trailing space",  },
+    ["<leader>ts"] = { util.toggle_trailing_space, "Toggle trailing space" },
   },
 }
 
 M.diff_view = {
   n = {
-    ["<leader>dv"] = { ":DiffviewFileHistory %<CR>", "Diffview file %",  },
-    ["<leader>dc"] = { ":DiffviewClose<CR>", "Diffview close",  },
+    ["<leader>dv"] = { ":DiffviewFileHistory %<CR>", "Diffview file %" },
+    ["<leader>dc"] = { ":DiffviewClose<CR>", "Diffview close" },
   },
 }
 
 M.icon_picker = {
   n = {
-    ["<leader>ip"] = { "<cmd>IconPickerNormal<CR>", "Open icon picker",  },
+    ["<leader>ip"] = { "<cmd>IconPickerNormal<CR>", "Open icon picker" },
   },
 }
 
 M.true_zen = {
   n = {
-    ["<leader>zn"] = { ":TZNarrow<CR>", "TZNarrow",  },
-    ["<leader>zf"] = { ":TZFocus<CR>", "TZFocuse",  },
-    ["<leader>zm"] = { ":TZMinimalist<CR>", "TZMinimallist",  },
-    ["<leader>za"] = { ":TZAtaraxis<CR>", "TZAtaraxis",  },
+    ["<leader>zn"] = { ":TZNarrow<CR>", "TZNarrow" },
+    ["<leader>zf"] = { ":TZFocus<CR>", "TZFocuse" },
+    ["<leader>zm"] = { ":TZMinimalist<CR>", "TZMinimallist" },
+    ["<leader>za"] = { ":TZAtaraxis<CR>", "TZAtaraxis" },
   },
   v = {
-    ["<leader>zn"] = { ":'<,'>TZNarrow<CR>", "TZNarrow",  },
+    ["<leader>zn"] = { ":'<,'>TZNarrow<CR>", "TZNarrow" },
   },
 }
 
 M.gitsigns = {
-	n = {
-		["<leader>gl"] = { ":Gitsigns toggle_current_line_blame<CR>", "Toggle line blame" }
-	}
+  n = {
+    ["<leader>gl"] = { ":Gitsigns toggle_current_line_blame<CR>", "Toggle line blame" },
+  },
 }
 
 M.nvimtree = {
-	n = {
-		["<leader>fr"] = { ":NvimTreeRefresh <CR>", "Refresh nvimtree" }
-	}
+  n = {
+    ["<leader>fr"] = { ":NvimTreeRefresh <CR>", "Refresh nvimtree" },
+  },
+}
+
+M.restnvim = {
+  n = {
+    ["<leader>ru"] = { "<Plug>RestNvim", "Rest under cursor" },
+    ["<leader>rp"] = { "<Plug>RestNvimPreview", "Rest preview" },
+    ["<leader>rl"] = { "<Plug>RestNvimLast", "Rest last" },
+  },
 }
 
 return M

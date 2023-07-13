@@ -41,3 +41,6 @@ vim.opt.foldenable = false
 
 vim.o.termguicolors = true
 vim.opt.wrap = false
+
+-- don't create backup files
+vim.opt.swapfile = false

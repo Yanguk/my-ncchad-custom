@@ -25,9 +25,6 @@ local sources = {
   b.diagnostics.cspell.with {
     extra_args = { "--config", "~/.config/cspell.json" },
   },
-  b.code_actions.cspell.with {
-    extra_args = { "--config", "~/.config/cspell.json" },
-  },
 }
 
 null_ls.setup {

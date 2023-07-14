@@ -192,6 +192,17 @@ local plugins = {
     ft = { "http" },
     dependencies = { "nvim-lua/plenary.nvim" },
   },
+
+  {
+    "renerocksai/telekasten.nvim",
+    cmd = { "Telekasten" },
+    dependencies = { "nvim-telescope/telescope.nvim" },
+    config = function()
+      require("telekasten").setup {
+        home = vim.fn.expand "~/.config/my-note",
+      }
+    end,
+  },
 }
 
 return plugins

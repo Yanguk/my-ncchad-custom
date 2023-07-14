@@ -203,6 +203,13 @@ local plugins = {
       }
     end,
   },
+
+  {
+    "chrishrb/gx.nvim",
+    keys = { "gx" },
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = true, -- default settings
+  }
 }
 
 return plugins

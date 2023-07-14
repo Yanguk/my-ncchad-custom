@@ -87,6 +87,9 @@ M.telescope = {
         },
       },
     },
+    oldfiles = {
+      cwd_only = true,
+    },
   },
 }
 

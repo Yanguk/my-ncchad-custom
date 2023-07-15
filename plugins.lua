@@ -193,23 +193,23 @@ local plugins = {
     dependencies = { "nvim-lua/plenary.nvim" },
   },
 
-  {
-    "renerocksai/telekasten.nvim",
-    cmd = { "Telekasten" },
-    dependencies = { "nvim-telescope/telescope.nvim" },
-    config = function()
-      require("telekasten").setup {
-        home = vim.fn.expand "~/.config/my-note",
-      }
-    end,
-  },
+  -- {
+  --   "renerocksai/telekasten.nvim",
+  --   cmd = { "Telekasten" },
+  --   dependencies = { "nvim-telescope/telescope.nvim" },
+  --   config = function()
+  --     require("telekasten").setup {
+  --       home = vim.fn.expand "~/.config/my-note",
+  --     }
+  --   end,
+  -- },
 
   {
     "chrishrb/gx.nvim",
     keys = { "gx" },
     dependencies = { "nvim-lua/plenary.nvim" },
     config = true, -- default settings
-  }
+  },
 }
 
 return plugins

@@ -1,5 +1,8 @@
 -- local util = require "custom.configs.util"
 
+local opt = vim.opt
+local o = vim.o
+local keymap = vim.keymap
 local autocmd = vim.api.nvim_create_autocmd
 -- local autocmd = vim.api.nvim_create_autocmd
 -- Auto resize panes when resizing nvim window
@@ -24,6 +27,7 @@ for i = 1, 9, 1 do
   end)
 end
 
+-- tab
 autocmd("FileType", {
   pattern = { "typescriptreact", "typescript" },
   callback = function()
@@ -31,22 +35,26 @@ autocmd("FileType", {
   end,
 })
 
+opt.tabstop = 4
+opt.shiftwidth = 4
+opt.softtabstop = 4
+
 -- fold
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-vim.opt.foldenable = false
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldenable = false
 
 -- show trailing whitespaces
 -- util.toggle_trailing_space()
 
-vim.o.termguicolors = true
-vim.opt.wrap = false
+o.termguicolors = true
+opt.wrap = false
 
 -- don't create backup files
-vim.opt.swapfile = false
+opt.swapfile = false
 
--- rezize
-vim.keymap.set("n", "=", [[<cmd>vertical resize +5<cr>]]) -- make the window biger vertically
-vim.keymap.set("n", "-", [[<cmd>vertical resize -5<cr>]]) -- make the window smaller vertically
-vim.keymap.set("n", "+", [[<cmd>horizontal resize +2<cr>]]) -- make the window bigger horizontally by pressing shift and =
-vim.keymap.set("n", "_", [[<cmd>horizontal resize -2<cr>]]) -- make the window smaller horizontally by pressing shift and -
+-- resize
+keymap.set("n", "=", [[<cmd>vertical resize +5<cr>]]) -- make the window biger vertically
+keymap.set("n", "-", [[<cmd>vertical resize -5<cr>]]) -- make the window smaller vertically
+keymap.set("n", "+", [[<cmd>horizontal resize +2<cr>]]) -- make the window bigger horizontally by pressing shift and =
+keymap.set("n", "_", [[<cmd>horizontal resize -2<cr>]]) -- make the window smaller horizontally by pressing shift and -

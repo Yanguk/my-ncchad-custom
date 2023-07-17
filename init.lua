@@ -1,5 +1,4 @@
 -- local util = require "custom.configs.util"
-
 local opt = vim.opt
 local o = vim.o
 local keymap = vim.keymap
@@ -31,6 +30,9 @@ end
 autocmd("FileType", {
   pattern = { "typescriptreact", "typescript" },
   callback = function()
+    opt.tabstop = 4
+    opt.shiftwidth = 4
+    opt.softtabstop = 4
     opt.expandtab = false
   end,
 })

@@ -100,4 +100,10 @@ M.restnvim = {
   },
 }
 
+M.lazyGit = {
+  n = {
+    ["<leader>gg"] = { ":LazyGit <CR>", "Open lazyGit" },
+  },
+}
+
 return M

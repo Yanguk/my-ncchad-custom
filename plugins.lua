@@ -199,6 +199,14 @@ local plugins = {
     dependencies = { "nvim-lua/plenary.nvim" },
     config = true, -- default settings
   },
+
+  {
+    "kdheepak/lazygit.nvim",
+    cmd = { "LazyGit" },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+  },
 }
 
 return plugins

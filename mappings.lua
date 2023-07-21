@@ -57,6 +57,7 @@ M.trailing_space = {
 
 M.diff_view = {
   n = {
+    ["<leader>do"] = { ":DiffviewOpen<CR>", "Diffview open" },
     ["<leader>dv"] = { ":DiffviewFileHistory %<CR>", "Diffview file %" },
     ["<leader>dc"] = { ":DiffviewClose<CR>", "Diffview close" },
   },

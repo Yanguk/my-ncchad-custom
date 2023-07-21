@@ -65,11 +65,7 @@ M.diff_view = {
 
 M.icon_picker = {
   n = {
-    ["<leader><leader>i"] = { "<cmd>IconPickerNormal emoji nerd_font<CR>", "Open icon picker Normal" },
-    -- ["<leader><leader>y"] = { "<cmd>IconPickerYank<CR>", "Open icon picker Yank" },
-  },
-  i = {
-    ["<c-i>"] = { "<cmd>IconPickerInsert emoji nerd_font<CR>", "Icon picker Insert" },
+    ["<leader>ip"] = { "<cmd>IconPickerNormal<CR>", "Open icon picker" },
   },
 }
 

@@ -160,7 +160,7 @@ local plugins = {
 
   {
     "ziontee113/icon-picker.nvim",
-    cmd = { "IconPickerNormal", "IconPickerYank", "IconPickerInsert" },
+    cmd = { "IconPickerNormal" },
     dependencies = {
       {
         "stevearc/dressing.nvim",

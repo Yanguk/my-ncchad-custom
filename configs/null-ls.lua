@@ -22,6 +22,9 @@ local sources = {
   b.formatting.rustfmt,
   b.code_actions.gitsigns,
   b.code_actions.eslint,
+  b.code_actions.cspell.with {
+    extra_args = { "--config", "~/.config/cspell.json" },
+  },
   b.diagnostics.cspell.with {
     extra_args = { "--config", "~/.config/cspell.json" },
   },

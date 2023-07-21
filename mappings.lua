@@ -8,8 +8,6 @@ M.general = {
   },
 }
 
--- more keybinds!
-
 M.buffer = {
   n = {
     ["<leader>tx"] = {
@@ -69,15 +67,9 @@ M.icon_picker = {
   },
 }
 
-M.true_zen = {
+M.zen_mode = {
   n = {
-    ["<leader>zn"] = { ":TZNarrow<CR>", "TZNarrow" },
-    ["<leader>zf"] = { ":TZFocus<CR>", "TZFocuse" },
-    ["<leader>zm"] = { ":TZMinimalist<CR>", "TZMinimallist" },
-    ["<leader>za"] = { ":TZAtaraxis<CR>", "TZAtaraxis" },
-  },
-  v = {
-    ["<leader>zn"] = { ":'<,'>TZNarrow<CR>", "TZNarrow" },
+    ["<leader>zm"] = { ":ZenMode<CR>", "ZenMode" },
   },
 }
 

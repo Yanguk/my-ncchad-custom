@@ -9,6 +9,11 @@ M.override = {
   Comment = {
     italic = true,
   },
+  FoldColumn = {
+    bg = "black",
+    fg = "grey",
+    -- link = "UfoFoldedEllipsis"
+  },
 }
 
 ---@type HLTable

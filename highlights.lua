@@ -10,9 +10,9 @@ M.override = {
     italic = true,
   },
   FoldColumn = {
-    bg = "black",
-    fg = "grey",
-    -- link = "UfoFoldedEllipsis"
+    link = "UfoFoldedEllipsis"
+    -- bg = "black",
+    -- fg = "grey",
   },
 }
 

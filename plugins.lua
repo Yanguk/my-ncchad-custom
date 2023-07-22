@@ -1,6 +1,7 @@
 local overrides = require "custom.configs.overrides"
 
 ---@type NvPluginSpec[]
+
 local plugins = {
   {
     "neovim/nvim-lspconfig",
@@ -85,7 +86,7 @@ local plugins = {
   {
     "nvim-pack/nvim-spectre",
     cmd = { "Spectre" },
-    opt = {
+    opts = {
       default = {
         replace = {
           cmd = "oxi",
@@ -98,6 +99,7 @@ local plugins = {
     "simrat39/rust-tools.nvim",
     event = "BufRead",
     ft = { "rust" },
+    dependencies = { "neovim/nvim-lspconfig" },
     config = function()
       require "custom.configs.rust-tools"
     end,

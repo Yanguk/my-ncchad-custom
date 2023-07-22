@@ -29,20 +29,21 @@ M.treesitter = {
 M.mason = {
   ensure_installed = {
     -- lua stuff
-    "lua-language-server",
+    -- "lua-language-server",
     "stylua",
 
     -- web dev stuff
     "css-lsp",
     "html-lsp",
     "typescript-language-server",
-    "deno",
+    "eslint-lsp",
+    -- "deno",
     "prettier",
     "rust-analyzer",
-
+    "cspell",
     -- c/cpp stuff
-    "clangd",
-    "clang-format",
+    -- "clangd",
+    -- "clang-format",
   },
 }
 

@@ -9,19 +9,19 @@ local b = null_ls.builtins
 local sources = {
 
   -- webdev stuff
-  b.formatting.deno_fmt, -- choosed deno for ts/js files cuz its very fast!
-  b.formatting.prettier.with { filetypes = { "html", "markdown", "css" } }, -- so prettier works only on these filetypes
+  b.formatting.prettier.with { filetypes = { "html", "markdown", "css", "tsx", "typescript" } }, -- so prettier works only on these filetypes
 
   -- Lua
-  b.formatting.stylua,
+  b.formatting.stylua.with { filetypes = { "lua" } },
 
   -- cpp
-  b.formatting.clang_format,
+  -- b.formatting.clang_format,
 
   -- custom
-  b.formatting.rustfmt,
+  b.formatting.rustfmt.with { filetypes = { "rust" } },
+
   b.code_actions.gitsigns,
-  b.code_actions.eslint,
+
   b.code_actions.cspell.with {
     extra_args = { "--config", "~/.config/cspell.json" },
   },

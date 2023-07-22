@@ -1,5 +1,6 @@
 local util = require "custom.configs.util"
 ---@type MappingsTable
+
 local M = {}
 
 M.general = {

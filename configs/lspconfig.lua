@@ -19,7 +19,6 @@ lspconfig["tsserver"].setup {
   on_attach = on_attach,
   capabilities = capabilities,
   init_options = {
-    hostInfo = "neovim",
     preferences = {
       importModuleSpecifierPreference = "non-relative",
     },
@@ -37,16 +36,4 @@ lspconfig["eslint"].setup {
     })
   end,
   settings = util.eslint_settings,
-}
-
-lspconfig["rust_analyzer"].setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  settings = {
-    ["rust-analyzer"] = {
-      checkOnSave = {
-        command = "clippy",
-      },
-    },
-  },
 }

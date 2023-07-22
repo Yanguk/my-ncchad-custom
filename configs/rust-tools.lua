@@ -11,6 +11,15 @@ rt.setup {
       ["rust-analyzer"] = {
         checkOnSave = {
           command = "clippy",
+          -- overrideCommand = {
+          --   "cargo",
+          --   "clippy",
+          --   "--fix",
+          --   "--workspace",
+          --   "--message-format=json",
+          --   "--all-targets",
+          --   "--allow-dirty",
+          -- },
         },
       },
     },

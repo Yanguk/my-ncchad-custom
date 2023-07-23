@@ -9,7 +9,7 @@ local b = null_ls.builtins
 local sources = {
 
   -- webdev stuff
-  b.formatting.prettier.with { filetypes = { "html", "markdown", "css", "tsx", "typescript" } }, -- so prettier works only on these filetypes
+  b.formatting.prettier.with { filetypes = { "html", "markdown", "css", "tsx", "typescript", "json" } }, -- so prettier works only on these filetypes
 
   -- Lua
   b.formatting.stylua.with { filetypes = { "lua" } },
@@ -22,9 +22,10 @@ local sources = {
 
   b.code_actions.gitsigns,
 
-  b.code_actions.cspell.with {
-    extra_args = { "--config", "~/.config/cspell.json" },
-  },
+  -- b.code_actions.cspell.with {
+  --   extra_args = { "--config", "~/.config/cspell.json" },
+  -- },
+
   b.diagnostics.cspell.with {
     extra_args = { "--config", "~/.config/cspell.json" },
   },

@@ -1,6 +1,6 @@
 {
   "version": "0.2",
-  "dictionaries": ["neovim", "en"],
+  "dictionaries": ["neovim", "en", "my_word"],
   "ignorePaths": ["node_modules", ".git", ".vscode"],
   "ignoreRegExpList": ["\\b\\d+[a-z]{1,2}\\b"],
   "allowCompoundWords": true,
@@ -30,7 +30,7 @@
   "language": "en",
   "dictionaryDefinitions": [
     {
-      "name": "neovim",
+      "name": "my_word",
       "addWords": true,
       "path": "~/.config/nvim/lua/custom/cspell/my-dictionary.txt"
     }

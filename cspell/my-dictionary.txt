@@ -10,3 +10,4 @@ iconify
 Bogo
 ngrok
 chadrc
+nvdash

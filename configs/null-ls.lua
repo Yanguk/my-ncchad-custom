@@ -6,8 +6,15 @@ end
 
 local b = null_ls.builtins
 
-local sources = {
+local cspell_config = {
+  find_json = function(_cwd)
+    return vim.fn.expand("~/.config/nvim/lua/custom/cspell/cspell.json")
+  end,
+}
 
+local cspell = require "cspell"
+
+local sources = {
   -- webdev stuff
   b.formatting.prettier.with { filetypes = { "html", "markdown", "css", "tsx", "typescript", "json" } }, -- so prettier works only on these filetypes
 
@@ -26,9 +33,11 @@ local sources = {
   --   extra_args = { "--config", "~/.config/cspell.json" },
   -- },
 
-  b.diagnostics.cspell.with {
-    extra_args = { "--config", "~/.config/cspell.json" },
-  },
+  -- b.diagnostics.cspell.with {
+  --   extra_args = { "--config", "~/.config/cspell.json" },
+  -- },
+  cspell.diagnostics.with { config = cspell_config },
+  cspell.code_actions.with { config = cspell_config },
 }
 
 null_ls.setup {

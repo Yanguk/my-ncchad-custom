@@ -1,7 +1,7 @@
+-- cSpell:disable
 local overrides = require "custom.configs.overrides"
 
 ---@type NvPluginSpec[]
-
 local plugins = {
   {
     "neovim/nvim-lspconfig",
@@ -11,6 +11,9 @@ local plugins = {
         config = function()
           require "custom.configs.null-ls"
         end,
+        dependencies = {
+          "davidmh/cspell.nvim",
+        },
       },
       "neovim/nvim-lspconfig",
     },

@@ -11,3 +11,8 @@ Bogo
 ngrok
 chadrc
 nvdash
+esac
+envrc
+ohmyzsh
+direnv
+bashls

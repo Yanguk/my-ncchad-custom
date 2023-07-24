@@ -7,7 +7,7 @@ end
 local b = null_ls.builtins
 
 local cspell_config = {
-  find_json = function(_cwd)
+  find_json = function()
     return vim.fn.expand("~/.config/nvim/lua/custom/cspell/cspell.json")
   end,
 }

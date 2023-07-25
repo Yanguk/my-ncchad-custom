@@ -1,6 +1,6 @@
 {
   "version": "0.2",
-  "dictionaries": ["neovim", "en", "my_word"],
+  "dictionaries": ["en_US", "node", "typescript", "my_word"],
   "ignorePaths": ["node_modules", ".git", ".vscode"],
   "ignoreRegExpList": ["\\b\\d+[a-z]{1,2}\\b"],
   "allowCompoundWords": true,

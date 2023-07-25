@@ -11,9 +11,6 @@ local plugins = {
         config = function()
           require "custom.configs.null-ls"
         end,
-        dependencies = {
-          "davidmh/cspell.nvim",
-        },
       },
       "neovim/nvim-lspconfig",
     },

@@ -14,8 +14,6 @@ local cspell_config = {
   end,
 }
 
--- local cspell = require "cspell"
-
 local sources = {
   -- webdev stuff
   b.formatting.prettier.with { filetypes = { "html", "markdown", "css", "tsx", "typescript", "json" } }, -- so prettier works only on these filetypes
@@ -38,11 +36,7 @@ local sources = {
 
   b.diagnostics.cspell.with {
     extra_args = { "--config", cspell_path },
-    -- config = cspell_config
   },
-
-  -- cspell.diagnostics.with { config = cspell_config },
-  -- cspell.code_actions.with { config = cspell_config },
 }
 
 null_ls.setup {

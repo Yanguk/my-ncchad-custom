@@ -1,6 +1,5 @@
 local util = require "custom.configs.util"
 ---@type MappingsTable
-
 local M = {}
 
 M.general = {
@@ -86,7 +85,7 @@ M.nvimtree = {
   },
 }
 
-M.restnvim = {
+M.rest_nvim = {
   n = {
     ["<leader>ru"] = { "<Plug>RestNvim", "Rest under cursor" },
     ["<leader>rp"] = { "<Plug>RestNvimPreview", "Rest preview" },

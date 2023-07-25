@@ -6,13 +6,15 @@ end
 
 local b = null_ls.builtins
 
+local cspell_path = "~/.config/nvim/lua/custom/cspell/cspell.json"
+
 local cspell_config = {
   find_json = function()
-    return vim.fn.expand("~/.config/nvim/lua/custom/cspell/cspell.json")
+    return vim.fn.expand(cspell_path)
   end,
 }
 
-local cspell = require "cspell"
+-- local cspell = require "cspell"
 
 local sources = {
   -- webdev stuff
@@ -29,15 +31,18 @@ local sources = {
 
   b.code_actions.gitsigns,
 
-  -- b.code_actions.cspell.with {
-  --   extra_args = { "--config", "~/.config/cspell.json" },
-  -- },
+  b.code_actions.cspell.with {
+    extra_args = { "--config", cspell_path },
+    config = cspell_config,
+  },
 
-  -- b.diagnostics.cspell.with {
-  --   extra_args = { "--config", "~/.config/cspell.json" },
-  -- },
-  cspell.diagnostics.with { config = cspell_config },
-  cspell.code_actions.with { config = cspell_config },
+  b.diagnostics.cspell.with {
+    extra_args = { "--config", cspell_path },
+    -- config = cspell_config
+  },
+
+  -- cspell.diagnostics.with { config = cspell_config },
+  -- cspell.code_actions.with { config = cspell_config },
 }
 
 null_ls.setup {

@@ -99,4 +99,51 @@ M.lazyGit = {
   },
 }
 
+M.trouble = {
+  n = {
+    ["<leader>lo"] = {
+      function()
+        require("trouble").open()
+      end,
+      "Open Trouble",
+    },
+    ["<leader>lw"] = {
+      function()
+        require("trouble").open "workspace_diagnostics"
+      end,
+      "Open Workspace Diagnostics in Trouble",
+    },
+    ["<leader>ld"] = {
+      function()
+        require("trouble").open "document_diagnostics"
+      end,
+      "Open Document Diagnostics in Trouble",
+    },
+    ["<leader>ll"] = {
+      function()
+        require("trouble").open "quickfix"
+      end,
+      "Open Quickfix List in Trouble",
+    },
+    ["<leader>lq"] = {
+      function()
+        require("trouble").open "loclist"
+      end,
+      "Open Location List in Trouble",
+    },
+    ["<leader>lx"] = {
+      function()
+        require("trouble").close()
+      end,
+      "Close Trouble",
+    },
+    ["gR"] = {
+      function()
+        require("trouble").open "lsp_references"
+      end,
+      "Open LSP References in Trouble",
+    },
+  },
+}
+
 return M

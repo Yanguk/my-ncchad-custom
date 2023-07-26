@@ -217,6 +217,13 @@ local plugins = {
       vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
     end,
   },
+
+  {
+    "kylechui/nvim-surround",
+    version = "*",
+    event = "VeryLazy",
+    config = true,
+  },
 }
 
 return plugins

@@ -104,38 +104,47 @@ M.trouble = {
     ["<leader>lo"] = {
       ":TroubleToggle<cr>",
       "Toggle Trouble",
+      opts = { silent = true },
     },
     ["<leader>lw"] = {
       ":TroubleToggle workspace_diagnostics<cr>",
       "Toggle Workspace Diagnostics in Trouble",
+      opts = { silent = true },
     },
     ["<leader>ld"] = {
       ":TroubleToggle document_diagnostics<cr>",
       "Toggle Document Diagnostics in Trouble",
+      opts = { silent = true },
     },
     ["<leader>li"] = {
       ":TroubleToggle lsp_implementations<cr>",
       "LSP implementations in Trouble",
+      opts = { silent = true },
     },
     ["gD"] = {
       ":TroubleToggle lsp_type_definitions<cr>",
       "LSP Type Definitions in Trouble",
+      opts = { silent = true },
     },
     ["<leader>Q"] = {
       ":TroubleToggle quickfix<cr>",
       "LSP Quickfix List in Trouble",
+      opts = { silent = true },
     },
     ["<leader>q"] = {
       ":TroubleToggle loclist<cr>",
       "LSP Location List in Trouble",
+      opts = { silent = true },
     },
     ["gd"] = {
       ":TroubleToggle lsp_definitions<cr>",
       "LSP definitions in Trouble",
+      opts = { silent = true },
     },
     ["gr"] = {
       ":TroubleToggle lsp_references<cr>",
       "LSP References in Trouble",
+      opts = { silent = true },
     },
   },
 }

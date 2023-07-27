@@ -113,6 +113,10 @@ M.trouble = {
       ":TroubleToggle document_diagnostics<cr>",
       "Toggle Document Diagnostics in Trouble",
     },
+    ["<leader>li"] = {
+      ":TroubleToggle lsp_implementations<cr>",
+      "LSP implementations in Trouble",
+    },
     ["gD"] = {
       ":TroubleToggle lsp_type_definitions<cr>",
       "LSP Type Definitions in Trouble",
@@ -128,10 +132,6 @@ M.trouble = {
     ["gd"] = {
       ":TroubleToggle lsp_definitions<cr>",
       "LSP definitions in Trouble",
-    },
-    ["gi"] = {
-      ":TroubleToggle lsp_implementations<cr>",
-      "LSP implementations in Trouble",
     },
     ["gr"] = {
       ":TroubleToggle lsp_references<cr>",

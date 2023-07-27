@@ -102,46 +102,40 @@ M.lazyGit = {
 M.trouble = {
   n = {
     ["<leader>lo"] = {
-      function()
-        require("trouble").open()
-      end,
-      "Open Trouble",
+      ":TroubleToggle<cr>",
+      "Toggle Trouble",
     },
     ["<leader>lw"] = {
-      function()
-        require("trouble").open "workspace_diagnostics"
-      end,
-      "Open Workspace Diagnostics in Trouble",
+      ":TroubleToggle workspace_diagnostics<cr>",
+      "Toggle Workspace Diagnostics in Trouble",
     },
     ["<leader>ld"] = {
-      function()
-        require("trouble").open "document_diagnostics"
-      end,
-      "Open Document Diagnostics in Trouble",
+      ":TroubleToggle document_diagnostics<cr>",
+      "Toggle Document Diagnostics in Trouble",
     },
-    ["<leader>ll"] = {
-      function()
-        require("trouble").open "quickfix"
-      end,
-      "Open Quickfix List in Trouble",
+    ["gD"] = {
+      ":TroubleToggle lsp_type_definitions<cr>",
+      "LSP Type Definitions in Trouble",
     },
-    ["<leader>lq"] = {
-      function()
-        require("trouble").open "loclist"
-      end,
-      "Open Location List in Trouble",
+    ["<leader>Q"] = {
+      ":TroubleToggle quickfix<cr>",
+      "LSP Quickfix List in Trouble",
     },
-    ["<leader>lx"] = {
-      function()
-        require("trouble").close()
-      end,
-      "Close Trouble",
+    ["<leader>q"] = {
+      ":TroubleToggle loclist<cr>",
+      "LSP Location List in Trouble",
     },
-    ["gR"] = {
-      function()
-        require("trouble").open "lsp_references"
-      end,
-      "Open LSP References in Trouble",
+    ["gd"] = {
+      ":TroubleToggle lsp_definitions<cr>",
+      "LSP definitions in Trouble",
+    },
+    ["gi"] = {
+      ":TroubleToggle lsp_implementations<cr>",
+      "LSP implementations in Trouble",
+    },
+    ["gr"] = {
+      ":TroubleToggle lsp_references<cr>",
+      "LSP References in Trouble",
     },
   },
 }

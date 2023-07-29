@@ -1,3 +1,4 @@
+-- cSpell:disable
 local opt = vim.opt
 local o = vim.o
 local keymap = vim.keymap
@@ -45,3 +46,5 @@ o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease
 o.foldlevelstart = 99
 o.foldenable = true
 o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+
+vim.cmd([[autocmd FileType * set formatoptions-=cro]])

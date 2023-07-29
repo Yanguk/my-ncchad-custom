@@ -1,6 +1,6 @@
 {
   "words": [],
-  "allowCompoundWords": true,
+  "allowCompoundWords": false,
   "dictionaries": ["en_US", "node", "typescript", "my_word"],
   "language": "en",
   "dictionaryDefinitions": [

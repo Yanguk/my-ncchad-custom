@@ -37,3 +37,4 @@ clangd
 nvterm
 bufnr
 bufs
+lastest

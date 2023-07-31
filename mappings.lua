@@ -102,48 +102,73 @@ M.lazyGit = {
 M.trouble = {
   n = {
     ["<leader>lo"] = {
-      ":TroubleToggle<cr>",
-      "Toggle Trouble",
+      function()
+        require("trouble").open()
+      end,
+      "Open Trouble",
       opts = { silent = true },
     },
     ["<leader>lw"] = {
-      ":TroubleToggle workspace_diagnostics<cr>",
-      "Toggle Workspace Diagnostics in Trouble",
+      function()
+        require("trouble").open "workspace_diagnostics"
+      end,
+      "Open Workspace Diagnostics in Trouble",
       opts = { silent = true },
     },
     ["<leader>ld"] = {
-      ":TroubleToggle document_diagnostics<cr>",
-      "Toggle Document Diagnostics in Trouble",
+      function()
+        require("trouble").open "document_diagnostics"
+      end,
+      "Open Document Diagnostics in Trouble",
       opts = { silent = true },
     },
     ["<leader>li"] = {
-      ":TroubleToggle lsp_implementations<cr>",
+      function()
+        require("trouble").open "lsp_implementations"
+      end,
       "LSP implementations in Trouble",
       opts = { silent = true },
     },
-    ["gD"] = {
-      ":TroubleToggle lsp_type_definitions<cr>",
-      "LSP Type Definitions in Trouble",
+    ["<leader>lc"] = {
+      function()
+        require("trouble").close()
+      end,
+      "Close Trouble",
       opts = { silent = true },
     },
     ["<leader>Q"] = {
-      ":TroubleToggle quickfix<cr>",
-      "LSP Quickfix List in Trouble",
+      function()
+        require("trouble").open "quickfix"
+      end,
+      "Open Quickfix List in Trouble",
       opts = { silent = true },
     },
     ["<leader>q"] = {
-      ":TroubleToggle loclist<cr>",
-      "LSP Location List in Trouble",
+      function()
+        require("trouble").open "loclist"
+      end,
+      "Open Location List in Trouble",
+      opts = { silent = true },
+    },
+    ["gD"] = {
+      function()
+        require("trouble").open "lsp_type_definitions"
+      end,
+      "LSP Type Definitions in Trouble",
       opts = { silent = true },
     },
     ["gd"] = {
-      ":TroubleToggle lsp_definitions<cr>",
+      function()
+        require("trouble").open "lsp_definitions"
+      end,
       "LSP definitions in Trouble",
       opts = { silent = true },
     },
     ["gr"] = {
-      ":TroubleToggle lsp_references<cr>",
-      "LSP References in Trouble",
+      function()
+        require("trouble").open "lsp_references"
+      end,
+      "Open LSP References in Trouble",
       opts = { silent = true },
     },
   },

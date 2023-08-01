@@ -129,7 +129,7 @@ M.trouble = {
       "LSP implementations in Trouble",
       opts = { silent = true },
     },
-    ["<leader>lc"] = {
+    ["<leader>lx"] = {
       function()
         require("trouble").close()
       end,

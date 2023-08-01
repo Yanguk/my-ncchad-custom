@@ -122,13 +122,6 @@ M.trouble = {
       "Open Document Diagnostics in Trouble",
       opts = { silent = true },
     },
-    ["<leader>li"] = {
-      function()
-        require("trouble").open "lsp_implementations"
-      end,
-      "LSP implementations in Trouble",
-      opts = { silent = true },
-    },
     ["<leader>lx"] = {
       function()
         require("trouble").close()
@@ -155,6 +148,13 @@ M.trouble = {
         require("trouble").open "lsp_type_definitions"
       end,
       "LSP Type Definitions in Trouble",
+      opts = { silent = true },
+    },
+    ["gi"] = {
+      function()
+        require("trouble").open "lsp_implementations"
+      end,
+      "LSP implementations in Trouble",
       opts = { silent = true },
     },
     ["gd"] = {

@@ -224,6 +224,22 @@ local plugins = {
     event = "VeryLazy",
     config = true,
   },
+
+  {
+    "andrewferrier/debugprint.nvim",
+    opts = {
+      print_tag = "DEBUG_🚀",
+    },
+    keys = { "g?" },
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function(_, opts)
+      require("debugprint").setup(opts)
+      vim.keymap.set("n", "g?d", require("debugprint").deleteprints, { desc = "DeleteDebugPrints" })
+    end,
+    version = "*",
+  },
 }
 
 return plugins

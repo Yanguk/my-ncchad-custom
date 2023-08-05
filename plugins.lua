@@ -234,11 +234,21 @@ local plugins = {
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
     },
-    config = function(_, opts)
-      require("debugprint").setup(opts)
+    init = function()
       vim.keymap.set("n", "g?d", require("debugprint").deleteprints, { desc = "DeleteDebugPrints" })
     end,
     version = "*",
+  },
+
+  {
+    "rcarriga/nvim-notify",
+    event = "VeryLazy",
+    opts = {
+      stages = "static",
+    },
+    init = function()
+      vim.notify = require "notify"
+    end,
   },
 }
 

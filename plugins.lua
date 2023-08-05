@@ -220,8 +220,8 @@ local plugins = {
 
   {
     "kylechui/nvim-surround",
+    keys = { "ys", "ds", "cs" },
     version = "*",
-    event = "VeryLazy",
     config = true,
   },
 

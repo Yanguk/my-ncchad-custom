@@ -27,12 +27,14 @@ local sources = {
   -- custom
   b.formatting.rustfmt.with { filetypes = { "rust" } },
 
-  b.code_actions.gitsigns,
+  -- gitsigns은 단축키로 사용중
+  -- b.code_actions.gitsigns,
 
-  b.code_actions.cspell.with {
-    extra_args = { "--config", cspell_path },
-    config = cspell_config,
-  },
+  -- 해당 기능이 재기능을 못하고있음
+  -- b.code_actions.cspell.with {
+  --   extra_args = { "--config", cspell_path },
+  --   config = cspell_config,
+  -- },
 
   b.diagnostics.cspell.with {
     extra_args = { "--config", cspell_path },

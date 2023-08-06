@@ -106,10 +106,8 @@ M.copilot = {
   },
 }
 
+-- for copilot-cmp
 M.cmp = {
-  completion = {
-    completeopt = "menu,menuone,noinsert,noselect",
-  },
   sources = {
     { name = "nvim_lsp", group_index = 2 },
     { name = "copilot", group_index = 2 },

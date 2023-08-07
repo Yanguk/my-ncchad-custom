@@ -34,3 +34,8 @@ lspconfig["bashls"].setup{
   capabilities = capabilities,
 	filetypes = {"sh", "zsh", "bash"},
 }
+
+lspconfig["yamlls"].setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}

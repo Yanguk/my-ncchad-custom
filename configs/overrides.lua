@@ -105,6 +105,7 @@ M.copilot = {
   panel = {
     enable = false,
   },
+  filetypes = { ["*"] = true },
 }
 
 -- for copilot-cmp

@@ -95,13 +95,7 @@ local plugins = {
   {
     "nvim-pack/nvim-spectre",
     cmd = { "Spectre" },
-    opts = {
-      default = {
-        replace = {
-          cmd = "oxi",
-        },
-      },
-    },
+    config = true,
   },
 
   {

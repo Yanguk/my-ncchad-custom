@@ -67,6 +67,20 @@ local plugins = {
     },
     config = function(_, opts)
       require "custom.configs.cmp"
+
+      local cmp = require "cmp"
+
+      opts.preselect = cmp.PreselectMode.None
+
+      opts.mapping["<CR>"] = cmp.mapping.confirm {
+        behavior = cmp.ConfirmBehavior.Replace,
+        select = false,
+      }
+
+      opts.completion = {
+        completeopt = "menu,menuone,noinsert,noselect",
+      }
+
       require("cmp").setup(opts)
     end,
     opts = overrides.cmp,

@@ -258,6 +258,14 @@ local plugins = {
     event = "InsertEnter",
     opts = overrides.copilot,
   },
+
+  {
+    "ggandor/leap.nvim",
+    config = function()
+       require('leap').add_default_mappings()
+    end,
+    event = 'VeryLazy'
+  },
 }
 
 return plugins

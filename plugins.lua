@@ -73,7 +73,7 @@ local plugins = {
       opts.preselect = cmp.PreselectMode.None
 
       opts.mapping["<CR>"] = cmp.mapping.confirm {
-        behavior = cmp.ConfirmBehavior.Replace,
+        behavior = cmp.ConfirmBehavior.Insert,
         select = false,
       }
 

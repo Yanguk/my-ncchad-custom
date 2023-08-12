@@ -11,6 +11,9 @@ local plugins = {
         config = function()
           require "custom.configs.null-ls"
         end,
+        dependencies = {
+          "davidmh/cspell.nvim",
+        },
       },
       "neovim/nvim-lspconfig",
       {
@@ -262,9 +265,9 @@ local plugins = {
   {
     "ggandor/leap.nvim",
     config = function()
-       require('leap').add_default_mappings()
+      require("leap").add_default_mappings()
     end,
-    event = 'VeryLazy'
+    event = "VeryLazy",
   },
 }
 

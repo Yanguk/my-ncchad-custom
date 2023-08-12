@@ -47,4 +47,4 @@ o.foldlevelstart = 99
 o.foldenable = true
 o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 
-vim.cmd([[autocmd FileType * set formatoptions-=cro]])
+vim.cmd [[autocmd FileType * set formatoptions-=cro]]

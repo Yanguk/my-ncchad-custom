@@ -39,3 +39,4 @@ bufnr
 bufs
 lastest
 actlog
+yamlls

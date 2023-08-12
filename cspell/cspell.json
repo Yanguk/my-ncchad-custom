@@ -13,5 +13,5 @@
   "ignorePaths": ["node_modules", ".git", ".vscode"],
   "version": "0.2",
   "ignoreRegExpList": ["\\b\\d+[a-z]{1,2}\\b"],
-  "flagWords": ["histroy", "calender"],
+  "flagWords": ["histroy", "calender"]
 }

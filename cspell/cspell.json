@@ -1,7 +1,7 @@
 {
   "words": [],
   "allowCompoundWords": false,
-  "dictionaries": ["en_US", "node", "typescript", "my_word", "programming_word"],
+  "dictionaries": ["en_US", "node", "typescript", "my_word", "programming_word", "knowre_bridge"],
   "language": "en",
   "dictionaryDefinitions": [
     {
@@ -12,6 +12,11 @@
     {
       "path": "~/.config/nvim/lua/custom/cspell/programming.txt",
       "name": "programming_word",
+      "addWords": true
+    },
+    {
+      "path": "~/.config/nvim/lua/custom/cspell/knowre-bridge.txt",
+      "name": "knowre_bridge",
       "addWords": true
     }
   ],

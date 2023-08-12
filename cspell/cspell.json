@@ -1,12 +1,17 @@
 {
   "words": [],
   "allowCompoundWords": false,
-  "dictionaries": ["en_US", "node", "typescript", "my_word"],
+  "dictionaries": ["en_US", "node", "typescript", "my_word", "programming_word"],
   "language": "en",
   "dictionaryDefinitions": [
     {
       "path": "~/.config/nvim/lua/custom/cspell/my-dictionary.txt",
       "name": "my_word",
+      "addWords": true
+    },
+    {
+      "path": "~/.config/nvim/lua/custom/cspell/programming.txt",
+      "name": "programming_word",
       "addWords": true
     }
   ],

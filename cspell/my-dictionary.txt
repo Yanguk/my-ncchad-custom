@@ -37,6 +37,3 @@ clangd
 nvterm
 bufnr
 bufs
-lastest
-actlog
-yamlls

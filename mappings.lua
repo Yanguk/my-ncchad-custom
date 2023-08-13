@@ -11,7 +11,7 @@ M.general = {
 M.buffer = {
   n = {
     ["<leader>tx"] = {
-      "<cmd>:lua require('nvchad_ui.tabufline').closeAllBufs() <CR>",
+      "<cmd>:lua require('nvchad.tabufline').closeAllBufs() <CR>",
       "Close all bufs",
     },
   },

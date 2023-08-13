@@ -12,7 +12,8 @@ local sources = {
   b.formatting.prettier.with { filetypes = { "html", "markdown", "css", "tsx", "typescript", "json" } },
   b.formatting.stylua.with { filetypes = { "lua" } },
   b.formatting.rustfmt.with { filetypes = { "rust" } },
-  b.formatting.shfmt.with { filetypes = { "sh" } },
+  b.formatting.shfmt,
+  b.formatting.yamlfmt,
 
   cspell.diagnostics.with({ config = cspell_config }),
   cspell.code_actions.with({ config = cspell_config }),

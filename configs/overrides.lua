@@ -49,6 +49,7 @@ M.mason = {
     "bash-language-server",
     "shfmt",
     "yamlfmt",
+    "taplo",
   },
 }
 

@@ -5,3 +5,6 @@ hookform
 solito
 Pagecall
 COOLSMS
+birthdate
+fullcalendar
+Pressable

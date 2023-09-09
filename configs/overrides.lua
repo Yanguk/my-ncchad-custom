@@ -26,6 +26,9 @@ M.treesitter = {
   context_commentstring = {
     enable = true,
   },
+  highlight = {
+    enable = true,
+  },
 }
 
 M.mason = {

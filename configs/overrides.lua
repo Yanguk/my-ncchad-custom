@@ -17,7 +17,8 @@ M.treesitter = {
     "http",
   },
   indent = {
-    enable = true,
+    enable = false,
+    -- disable = { "rust", 'typescript' },
   },
   autotag = {
     enable = true,

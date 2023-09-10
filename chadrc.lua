@@ -6,7 +6,7 @@ local highlights = require "custom.highlights"
 
 M.ui = {
   theme = "catppuccin",
-  theme_toggle = { "catppuccin", "one_dark" },
+  theme_toggle = { "catppuccin", "onedark" },
   -- transparency = true,
 
   hl_override = highlights.override,

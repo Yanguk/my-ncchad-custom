@@ -15,6 +15,7 @@ M.treesitter = {
     "json",
     "rust",
     "http",
+    "toml",
   },
   indent = {
     enable = true,

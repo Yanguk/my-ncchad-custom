@@ -8,3 +8,6 @@ COOLSMS
 birthdate
 fullcalendar
 Pressable
+Dripsy
+BRIIIDGE
+lintstagedrc

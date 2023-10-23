@@ -79,9 +79,22 @@ M.gitsigns = {
   },
 }
 
+local isWide = true
+
 M.nvimtree = {
   n = {
-    ["<leader>tr"] = { ":NvimTreeResize ", "Resize nvimtree" },
+    ["<leader>tt"] = {
+      function()
+        if isWide then
+          vim.cmd ":NvimTreeResize +15"
+        else
+          vim.cmd ":NvimTreeResize -15"
+        end
+
+        isWide = not isWide -- 토글 상태 변경
+      end,
+      "Resize nvimtree toggle",
+    },
   },
 }
 

@@ -11,3 +11,5 @@ Pressable
 Dripsy
 BRIIIDGE
 lintstagedrc
+Naver
+Camstudy

@@ -240,7 +240,7 @@ local plugins = {
   {
     "andrewferrier/debugprint.nvim",
     opts = {
-      print_tag = "DEBUG_🚀",
+      print_tag = "DEBUG_💥",
     },
     keys = { "g?" },
     dependencies = {

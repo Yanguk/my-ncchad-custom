@@ -25,3 +25,4 @@ Mockdb
 mockingoose
 Nativebase
 Revalidator
+Lightbox

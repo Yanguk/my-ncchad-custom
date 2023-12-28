@@ -274,6 +274,12 @@ local plugins = {
     end,
     event = "VeryLazy",
   },
+
+  {
+    "lbrayner/vim-rzip",
+    event = "BufRead",
+    ft = { "zip" },
+  },
 }
 
 return plugins

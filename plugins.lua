@@ -277,7 +277,7 @@ local plugins = {
 
   {
     "lbrayner/vim-rzip",
-    event = "BufRead",
+    event = "VeryLazy",
     ft = { "zip" },
   },
 }

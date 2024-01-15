@@ -27,3 +27,5 @@ Nativebase
 Revalidator
 Lightbox
 virtuals
+Workingday
+daum

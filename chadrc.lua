@@ -5,8 +5,8 @@ local M = {}
 local highlights = require "custom.highlights"
 
 M.ui = {
-  theme = "gruvbox",
-  theme_toggle = { "gruvbox", "gruvbox" },
+  theme = "kanagawa",
+  theme_toggle = { "kanagawa", "kanagawa" },
   -- transparency = true,
 
   hl_override = highlights.override,

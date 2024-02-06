@@ -239,9 +239,7 @@ local plugins = {
 
   {
     "andrewferrier/debugprint.nvim",
-    opts = {
-      print_tag = "DEBUG_💥",
-    },
+    opts = overrides.debugprint,
     keys = { "g?" },
     dependencies = {
       "nvim-treesitter/nvim-treesitter",

@@ -116,12 +116,27 @@ M.copilot = {
 -- for copilot-cmp
 M.cmp = {
   sources = {
-    { name = "copilot", group_index = 2 },
+    { name = "copilot",  group_index = 2 },
     { name = "nvim_lsp", group_index = 2 },
-    { name = "luasnip", group_index = 2 },
-    { name = "buffer", group_index = 2 },
+    { name = "luasnip",  group_index = 2 },
+    { name = "buffer",   group_index = 2 },
     { name = "nvim_lua", group_index = 2 },
-    { name = "path", group_index = 2 },
+    { name = "path",     group_index = 2 },
+  },
+}
+
+local js = {
+  left = 'console.log("',
+  right = '")',
+  mid_var = '", ',
+  right_var = ")",
+}
+
+M.debugprint = {
+  print_tag = "DEBUG_💥",
+  filetypes = {
+    ["typescript"] = js,
+    ["typescriptreact"] = js,
   },
 }
 

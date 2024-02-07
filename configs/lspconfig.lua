@@ -4,8 +4,8 @@ local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
 -- nvim-ufo
 capabilities.textDocument.foldingRange = {
-    dynamicRegistration = false,
-    lineFoldingOnly = true
+  dynamicRegistration = false,
+  lineFoldingOnly = true,
 }
 
 local util = require "custom.configs.util"
@@ -33,13 +33,39 @@ lspconfig["eslint"].setup {
   settings = util.eslint_settings,
 }
 
-lspconfig["bashls"].setup{
-	on_attach = on_attach,
+lspconfig["bashls"].setup {
+  on_attach = on_attach,
   capabilities = capabilities,
-	filetypes = {"sh", "zsh", "bash"},
+  filetypes = { "sh", "zsh", "bash" },
 }
 
 lspconfig["yamlls"].setup {
   on_attach = on_attach,
   capabilities = capabilities,
+}
+
+vim.g.rustaceanvim = {
+  -- Plugin configuration
+  tools = {},
+  -- LSP configuration
+  server = {
+    on_attach = on_attach,
+    settings = {
+      -- rust-analyzer language server configuration
+      ["rust-analyzer"] = {
+        command = "clippy",
+        -- overrideCommand = {
+        --   "cargo",
+        --   "clippy",
+        --   "--fix",
+        --   "--workspace",
+        --   "--message-format=json",
+        --   "--all-targets",
+        --   "--allow-dirty",
+        -- },
+      },
+    },
+  },
+  -- DAP configuration
+  dap = {},
 }

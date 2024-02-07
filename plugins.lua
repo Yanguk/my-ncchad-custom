@@ -116,13 +116,9 @@ local plugins = {
   },
 
   {
-    "simrat39/rust-tools.nvim",
-    event = "BufRead",
+    "mrcjkb/rustaceanvim",
+    version = "^4", -- Recommended
     ft = { "rust" },
-    dependencies = { "neovim/nvim-lspconfig" },
-    config = function()
-      require "custom.configs.rust-tools"
-    end,
   },
 
   {
@@ -292,12 +288,12 @@ local plugins = {
       "rfc_semicolon",
     },
     event = "BufRead",
-    cmd = {
-      "RainbowDelim",
-      "RainbowDelimSimple",
-      "RainbowDelimQuoted",
-      "RainbowMultiDelim",
-    },
+    -- cmd = {
+    --   "RainbowDelim",
+    --   "RainbowDelimSimple",
+    --   "RainbowDelimQuoted",
+    --   "RainbowMultiDelim",
+    -- },
   },
 }
 

@@ -5,16 +5,16 @@ local M = {}
 local highlights = require "custom.highlights"
 
 M.ui = {
-  theme = "kanagawa",
-  theme_toggle = { "kanagawa", "kanagawa" },
+  theme = "gruvbox",
+  theme_toggle = { "gruvbox", "kanagawa" },
   -- transparency = true,
 
   hl_override = highlights.override,
   hl_add = highlights.add,
 
-  nvdash = {
-    load_on_startup = true,
-  },
+  -- nvdash = {
+  --   load_on_startup = true,
+  -- },
 }
 
 M.plugins = "custom.plugins"

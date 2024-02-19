@@ -45,8 +45,8 @@ M.mason = {
     "rust-analyzer",
     "cspell",
     -- c/cpp stuff
-    -- "clangd",
-    -- "clang-format",
+    "clangd",
+    "clang-format",
     "yaml-language-server",
     "bash-language-server",
     "shfmt",

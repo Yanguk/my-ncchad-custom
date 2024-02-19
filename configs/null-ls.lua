@@ -15,6 +15,7 @@ local sources = {
   b.formatting.shfmt,
   b.formatting.yamlfmt,
   b.formatting.taplo,
+  b.formatting.clang_format,
 
   cspell.diagnostics.with({ config = cspell_config }),
   cspell.code_actions.with({ config = cspell_config }),

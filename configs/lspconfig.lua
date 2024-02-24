@@ -46,7 +46,9 @@ lspconfig["yamlls"].setup {
 
 lspconfig["clangd"].setup {
   on_attach = on_attach,
-  capabilities = capabilities,
+  capabilities = vim.tbl_extend("force", capabilities, {
+    offsetEncoding = "utf-16",
+  }),
 }
 
 vim.g.rustaceanvim = {

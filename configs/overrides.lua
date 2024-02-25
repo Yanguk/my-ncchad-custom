@@ -49,9 +49,6 @@ M.mason = {
     "clang-format",
     "yaml-language-server",
     "bash-language-server",
-    "shfmt",
-    "yamlfmt",
-    "taplo",
   },
 }
 

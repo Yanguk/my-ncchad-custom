@@ -9,12 +9,9 @@ local cspell = require "cspell"
 local cspell_config = require "custom.configs.cspell"
 
 local sources = {
-  b.formatting.prettier.with { filetypes = { "html", "markdown", "css", "tsx", "typescript", "json" } },
+  b.formatting.prettier,
   b.formatting.stylua.with { filetypes = { "lua" } },
-  b.formatting.rustfmt.with { filetypes = { "rust" } },
   b.formatting.shfmt,
-  b.formatting.yamlfmt,
-  b.formatting.taplo,
   b.formatting.clang_format,
 
   cspell.diagnostics.with { config = cspell_config },

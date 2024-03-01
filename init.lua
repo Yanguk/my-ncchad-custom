@@ -1,8 +1,9 @@
 -- cSpell:disable
 local opt = vim.opt
 local o = vim.o
-local keymap = vim.keymap
 local autocmd = vim.api.nvim_create_autocmd
+
+vim.loader.enable()
 
 -- Auto resize panes when resizing nvim window
 autocmd("VimResized", {

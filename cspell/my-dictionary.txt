@@ -38,3 +38,4 @@ nvterm
 bufnr
 bufs
 notifee
+taplo

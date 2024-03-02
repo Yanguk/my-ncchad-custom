@@ -60,17 +60,54 @@ local plugins = {
 
   {
     "hrsh7th/nvim-cmp",
-    event = { "CmdlineEnter", "InsertEnter" },
     dependencies = {
-      "hrsh7th/cmp-cmdline",
+      {
+        "hrsh7th/cmp-cmdline",
+        event = { "CmdLineEnter" },
+        opts = {
+          history = true,
+          updateevents = "CmdlineEnter,CmdlineChanged",
+        },
+        config = function()
+          local cmp = require "cmp"
+
+          cmp.setup.filetype("gitcommit", {
+            sources = cmp.config.sources({
+              { name = "cmp_git" }, -- You can specify the `cmp_git` source if you were installed it.
+            }, {
+              { name = "buffer" },
+            }),
+          })
+
+          cmp.setup.cmdline("/", {
+            mapping = cmp.mapping.preset.cmdline(),
+            sources = {
+              { name = "buffer" },
+            },
+          })
+
+          -- `:` cmdline setup.
+          cmp.setup.cmdline(":", {
+            mapping = cmp.mapping.preset.cmdline(),
+            sources = cmp.config.sources({
+              { name = "path" },
+            }, {
+              {
+                name = "cmdline",
+                option = {
+                  ignore_cmds = { "Man", "!" },
+                },
+              },
+            }),
+          })
+        end,
+      },
       {
         "zbirenbaum/copilot-cmp",
         config = true,
       },
     },
     config = function(_, opts)
-      require "custom.configs.cmp"
-
       local cmp = require "cmp"
 
       opts.preselect = cmp.PreselectMode.None
@@ -84,7 +121,7 @@ local plugins = {
         completeopt = "menu,menuone,noinsert,noselect",
       }
 
-      require("cmp").setup(opts)
+      cmp.setup(opts)
     end,
     opts = overrides.cmp,
   },

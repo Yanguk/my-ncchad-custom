@@ -48,9 +48,7 @@ local plugins = {
   {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
-    config = function()
-      require("better_escape").setup()
-    end,
+    config = true,
   },
 
   {
@@ -60,6 +58,7 @@ local plugins = {
 
   {
     "hrsh7th/nvim-cmp",
+    event = "InsertEnter",
     dependencies = {
       {
         "hrsh7th/cmp-cmdline",
@@ -183,9 +182,7 @@ local plugins = {
   {
     "sindrets/diffview.nvim",
     cmd = { "DiffviewFileHistory", "DiffviewOpen" },
-    config = function()
-      require("diffview").setup()
-    end,
+    config = true,
   },
 
   {

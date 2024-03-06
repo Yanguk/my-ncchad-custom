@@ -39,3 +39,4 @@ bufnr
 bufs
 notifee
 taplo
+rustaceanvim

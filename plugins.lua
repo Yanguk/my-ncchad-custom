@@ -339,6 +339,16 @@ local plugins = {
       { "<leader>O", "<cmd>Octo<cr>", desc = "Octo" },
     },
   },
+
+  {
+    "stevearc/aerial.nvim",
+    cmd = { "AerialToggle" },
+    config = true,
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-tree/nvim-web-devicons",
+    },
+  },
 }
 
 return plugins

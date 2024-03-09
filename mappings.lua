@@ -187,4 +187,14 @@ M.trouble = {
   },
 }
 
+M.aerial = {
+  n = {
+    ["<leader>a"] = {
+      "<cmd>AerialToggle!<CR>",
+      "Toggle Aerial",
+      opts = { silent = true },
+    },
+  },
+}
+
 return M

@@ -11,6 +11,7 @@ local sources = {
   b.formatting.stylua.with { filetypes = { "lua" } },
   b.formatting.shfmt,
   b.formatting.clang_format,
+  b.formatting.raco_fmt,
 
   cspell.diagnostics.with { config = cspell_config },
   cspell.code_actions.with { config = cspell_config },

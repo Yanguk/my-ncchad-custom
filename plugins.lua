@@ -64,7 +64,6 @@ local plugins = {
   {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
-    config = true,
   },
 
   {
@@ -119,7 +118,6 @@ local plugins = {
       },
       {
         "zbirenbaum/copilot-cmp",
-        config = true,
       },
     },
     config = function(_, opts)
@@ -165,13 +163,11 @@ local plugins = {
   {
     "folke/zen-mode.nvim",
     cmd = { "ZenMode" },
-    config = true,
   },
 
   {
     "nvim-pack/nvim-spectre",
     cmd = { "Spectre" },
-    config = true,
   },
 
   {
@@ -201,7 +197,6 @@ local plugins = {
   {
     "sindrets/diffview.nvim",
     cmd = { "DiffviewFileHistory", "DiffviewOpen" },
-    config = true,
   },
 
   {
@@ -227,7 +222,6 @@ local plugins = {
       { "nvim-lua/plenary.nvim" },
       { "nvim-tree/nvim-tree.lua" },
     },
-    config = true,
   },
 
   {
@@ -240,7 +234,6 @@ local plugins = {
     "chrishrb/gx.nvim",
     keys = { { "gx", "<cmd>Browse<cr>", mode = { "n", "x" } } },
     dependencies = { "nvim-lua/plenary.nvim" },
-    config = true,
   },
 
   {
@@ -272,8 +265,8 @@ local plugins = {
       },
     },
     config = function(_, opts)
-      vim.keymap.set("n", "zR", require("ufo").openAllFolds)
-      vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
+      vim.keymap.set("n", "zR", require("ufo").openAllFolds, { desc = "open All Folds" })
+      vim.keymap.set("n", "zM", require("ufo").closeAllFolds, { desc = "close All Folds" })
 
       require("ufo").setup(opts)
     end,
@@ -283,7 +276,6 @@ local plugins = {
     "kylechui/nvim-surround",
     keys = { "ys", "ds", "cs" },
     version = "*",
-    config = true,
   },
 
   {
@@ -332,7 +324,6 @@ local plugins = {
 
   {
     "cameron-wags/rainbow_csv.nvim",
-    config = true,
     ft = {
       "csv",
       "tsv",
@@ -363,11 +354,34 @@ local plugins = {
   {
     "stevearc/aerial.nvim",
     cmd = { "AerialToggle" },
-    config = true,
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
       "nvim-tree/nvim-web-devicons",
     },
+  },
+
+  {
+    "saecki/crates.nvim",
+    event = { "BufRead Cargo.toml" },
+    config = function()
+      local crates = require "crates"
+      crates.setup()
+
+      vim.keymap.set("n", "<leader>cv", crates.show_versions_popup, {
+        silent = true,
+        desc = "Show Crates Versions",
+      })
+
+      vim.keymap.set("n", "<leader>cf", crates.show_features_popup, {
+        silent = true,
+        desc = "Show Crates Features",
+      })
+
+      vim.keymap.set("n", "<leader>cd", crates.show_dependencies_popup, {
+        silent = true,
+        desc = "Show Crates Dependencies",
+      })
+    end,
   },
 }
 

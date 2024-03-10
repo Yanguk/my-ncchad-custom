@@ -38,6 +38,7 @@ local plugins = {
       {
         "folke/trouble.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
+        config = true,
       },
     },
     config = function()
@@ -64,6 +65,7 @@ local plugins = {
   {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
+    config = true,
   },
 
   {
@@ -118,6 +120,7 @@ local plugins = {
       },
       {
         "zbirenbaum/copilot-cmp",
+        config = true,
       },
     },
     config = function(_, opts)
@@ -147,16 +150,20 @@ local plugins = {
   {
     "numToStr/Comment.nvim",
     keys = { "gc", "gcc" },
-  },
-
-  {
-    "JoosepAlviste/nvim-ts-context-commentstring",
-    ft = WEB_FT_LIST,
-    dependencies = { "numToStr/Comment.nvim" },
+    dependencies = {
+      {
+        "JoosepAlviste/nvim-ts-context-commentstring",
+        config = function()
+          vim.g.skip_ts_context_commentstring_module = true
+          require("ts_context_commentstring").setup {
+            enable_autocmd = false,
+          }
+        end,
+      },
+    },
     config = function(_, opts)
-      require("Comment").setup(vim.tbl_deep_extend("force", opts, {
-        pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
-      }))
+      opts.pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook()
+      require("Comment").setup(opts)
     end,
   },
 
@@ -168,6 +175,7 @@ local plugins = {
   {
     "nvim-pack/nvim-spectre",
     cmd = { "Spectre" },
+    config = true,
   },
 
   {
@@ -178,6 +186,7 @@ local plugins = {
 
   {
     "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     ft = { "markdown" },
     build = function()
       vim.fn["mkdp#util#install"]()
@@ -189,9 +198,7 @@ local plugins = {
     "windwp/nvim-ts-autotag",
     ft = WEB_FT_LIST,
     dependencies = { "nvim-treesitter/nvim-treesitter" },
-    config = function()
-      require("nvim-ts-autotag").setup()
-    end,
+    config = true,
   },
 
   {
@@ -222,18 +229,21 @@ local plugins = {
       { "nvim-lua/plenary.nvim" },
       { "nvim-tree/nvim-tree.lua" },
     },
+    config = true,
   },
 
   {
     "rest-nvim/rest.nvim",
     ft = { "http" },
     dependencies = { "nvim-lua/plenary.nvim" },
+    config = true,
   },
 
   {
     "chrishrb/gx.nvim",
     keys = { { "gx", "<cmd>Browse<cr>", mode = { "n", "x" } } },
     dependencies = { "nvim-lua/plenary.nvim" },
+    config = true,
   },
 
   {
@@ -276,6 +286,7 @@ local plugins = {
     "kylechui/nvim-surround",
     keys = { "ys", "ds", "cs" },
     version = "*",
+    config = true,
   },
 
   {
@@ -307,6 +318,7 @@ local plugins = {
     "zbirenbaum/copilot.lua",
     event = "InsertEnter",
     opts = overrides.copilot,
+    config = true,
   },
 
   {
@@ -320,6 +332,7 @@ local plugins = {
   {
     "lbrayner/vim-rzip",
     ft = { "zip" },
+    config = true,
   },
 
   {
@@ -333,6 +346,7 @@ local plugins = {
       "rfc_csv",
       "rfc_semicolon",
     },
+    config = true,
   },
 
   {
@@ -354,6 +368,7 @@ local plugins = {
   {
     "stevearc/aerial.nvim",
     cmd = { "AerialToggle" },
+    config = true,
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
       "nvim-tree/nvim-web-devicons",

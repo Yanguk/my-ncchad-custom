@@ -1,6 +1,26 @@
 -- cSpell:disable
 local overrides = require "custom.configs.overrides"
 
+local WEB_FT_LIST = {
+  "html",
+  "javascript",
+  "typescript",
+  "javascriptreact",
+  "typescriptreact",
+  "svelte",
+  "vue",
+  "tsx",
+  "jsx",
+  "rescript",
+  "xml",
+  "php",
+  "markdown",
+  "astro",
+  "glimmer",
+  "handlebars",
+  "hbs",
+}
+
 ---@type NvPluginSpec[]
 local plugins = {
   {
@@ -34,10 +54,6 @@ local plugins = {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = overrides.treesitter,
-  },
-
-  {
-    "JoosepAlviste/nvim-ts-context-commentstring",
   },
 
   {
@@ -132,6 +148,13 @@ local plugins = {
 
   {
     "numToStr/Comment.nvim",
+    keys = { "gc", "gcc" },
+  },
+
+  {
+    "JoosepAlviste/nvim-ts-context-commentstring",
+    ft = WEB_FT_LIST,
+    dependencies = { "numToStr/Comment.nvim" },
     config = function(_, opts)
       require("Comment").setup(vim.tbl_deep_extend("force", opts, {
         pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
@@ -159,20 +182,16 @@ local plugins = {
 
   {
     "iamcco/markdown-preview.nvim",
-    event = "BufRead",
     ft = { "markdown" },
     build = function()
       vim.fn["mkdp#util#install"]()
-    end,
-    init = function()
       vim.g.mkdp_theme = "dark"
     end,
   },
 
   {
     "windwp/nvim-ts-autotag",
-    event = "InsertEnter",
-    ft = { "typescriptreact", "javascriptreact" },
+    ft = WEB_FT_LIST,
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     config = function()
       require("nvim-ts-autotag").setup()
@@ -213,7 +232,6 @@ local plugins = {
 
   {
     "rest-nvim/rest.nvim",
-    event = "BufRead",
     ft = { "http" },
     dependencies = { "nvim-lua/plenary.nvim" },
   },
@@ -253,10 +271,11 @@ local plugins = {
         end,
       },
     },
-    config = true,
-    init = function()
+    config = function(_, opts)
       vim.keymap.set("n", "zR", require("ufo").openAllFolds)
       vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
+
+      require("ufo").setup(opts)
     end,
   },
 
@@ -274,7 +293,9 @@ local plugins = {
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
     },
-    init = function()
+    config = function(_, opts)
+      require("debugprint").setup(opts)
+
       vim.keymap.set("n", "g?d", require("debugprint").deleteprints, { desc = "DeleteDebugPrints" })
     end,
     version = "*",
@@ -284,7 +305,8 @@ local plugins = {
     "rcarriga/nvim-notify",
     event = "VeryLazy",
     opts = { stages = "static" },
-    init = function()
+    config = function(_, opts)
+      require("notify").setup(opts)
       vim.notify = require "notify"
     end,
   },
@@ -297,15 +319,14 @@ local plugins = {
 
   {
     "ggandor/leap.nvim",
+    keys = { "s", "S", desc = "Leap" },
     config = function()
       require("leap").add_default_mappings()
     end,
-    event = "VeryLazy",
   },
 
   {
     "lbrayner/vim-rzip",
-    event = "BufRead",
     ft = { "zip" },
   },
 
@@ -321,7 +342,6 @@ local plugins = {
       "rfc_csv",
       "rfc_semicolon",
     },
-    event = "BufRead",
   },
 
   {

@@ -331,8 +331,13 @@ local plugins = {
 
   {
     "lbrayner/vim-rzip",
-    ft = { "zip" },
-    config = true,
+    ft = {
+      "zip",
+      "typescript",
+      "javascript",
+      "typescriptreact",
+      "typescriptreact"
+    },
   },
 
   {

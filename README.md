@@ -1,6 +1,6 @@
-this repository is version 2.5 config
+this repository is version 2 config
 
-I migrated to version 2.5 because
+`I migrated to version 2.5 because`
 
 # Example_config
 

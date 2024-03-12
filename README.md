@@ -1,4 +1,6 @@
-migrate to Nvchad ver2.5
+this repository is version 2.5 config
+
+I migrated to version 2.5 because
 
 # Example_config
 
